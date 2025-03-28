@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mycoffeeApp
+spec:
+  selector:
+    matchLabels:
+      app: mycoffeeApp
+  template:
+    metadata:
+      labels:
+        app: mycoffeeApp
+    spec:
+      containers:
+      - name: mycoffeeApp
+        image: abdelrahman2arafa/node.js_coffe
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+        - name: APP_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: APP_HOST
+        - name: APP_DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: APP_DB_USER
+        - name: APP_DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: APP_DB_NAME
+        - name: APP_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: APP_DB_PASSWORD
