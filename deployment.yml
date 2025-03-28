@@ -14,8 +14,6 @@ spec:
       containers:
       - name: mycoffeeapp
         image: abdelrahman2arafa/node.js_coffe
-        securityContext:
-          runAsUser: 0
         resources:
           limits:
             memory: "256Mi"
