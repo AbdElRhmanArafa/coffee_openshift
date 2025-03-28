@@ -5,7 +5,7 @@ metadata:
   namespace: a4-project
 spec:
   selector:
-    app: mysql-service
+    app: mysql
   ports:
     - protocol: TCP
       port:  3306
