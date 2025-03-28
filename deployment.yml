@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mycoffeeApp
+  name: mycoffeeapp
 spec:
   selector:
     matchLabels:
-      app: mycoffeeApp
+      app: mycoffeeapp
   template:
     metadata:
       labels:
-        app: mycoffeeApp
+        app: mycoffeeapp
     spec:
       containers:
-      - name: mycoffeeApp
+      - name: mycoffeeapp
         image: abdelrahman2arafa/node.js_coffe
         resources:
           limits:

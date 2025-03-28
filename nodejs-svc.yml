@@ -4,7 +4,7 @@ metadata:
   name: mycoffee-svc
 spec:
   selector:
-    app: mycoffeeApp
+    app: mycoffeeapp
   type: NodePort
   ports:
   - port: 80
